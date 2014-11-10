@@ -1,0 +1,9 @@
+<h1>Products</h1>
+
+<%= @products.each do |product| %>
+  <p><%= product[:name] %>, <%= product[:description] %>, <%= product[:price_in_cents] %></p>
+  <img src="<%= product[:url] %>">
+<% end %>
+
+
+
