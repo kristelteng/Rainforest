@@ -3,7 +3,7 @@
 <%= link_to "Create product", "/products/new" %>
 
 <% @products.each do |product| %>
-  <p><%= product.name %>, <%= product.description %>, <%= product.price_in_cents %> <%= link_to "Show", product_url(product) %></p>
-
+  <p><%= product.name %>, <%= product.description %>, <%= product.formatted_price %> <%= link_to "Show", product_url(product) %></p>
 
 <% end %>
+
