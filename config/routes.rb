@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'users/new'
+
+  get 'users/create'
+
   # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -16,6 +20,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :products
+    resources :users, only: [:new, :create]
 
   # Example resource route with options:
   #   resources :products do
