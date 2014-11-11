@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'users/new'
 
   get 'users/create'
@@ -21,6 +27,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
     resources :products
     resources :users, only: [:new, :create]
+    resources :sessions, only: [:new, :create, :destroy]
 
   # Example resource route with options:
   #   resources :products do
