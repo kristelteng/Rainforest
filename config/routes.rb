@@ -1,14 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
 
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'users/new'
-
-  get 'users/create'
 
   # get 'welcome/index'
 
@@ -25,9 +17,12 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-    resources :products
-    resources :users, only: [:new, :create]
+    resources :products do
+      resources :reviews, only: [:show, :create, :destroy]
+    end
+    
     resources :sessions, only: [:new, :create, :destroy]
+    resources :users, only: [:new, :create]
 
   # Example resource route with options:
   #   resources :products do
