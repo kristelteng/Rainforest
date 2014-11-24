@@ -1,8 +1,3 @@
-<% @products.each do |product| %>
-  <p><%= product.name %>, <%= product.description %>, <%= product.formatted_price %> <%= link_to "Show", product_url(product) %></p>
 
-<% end %>
+<p><%= product.name %>, <%= product.description %>, <%= product.formatted_price %> <%= link_to "Show", product_url(product) %></p>
 
-<div id="products">
-  <%= render @products %>
-</div>
