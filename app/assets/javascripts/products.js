@@ -5,9 +5,9 @@ $(document).on("ready page:load", function() {
     var searchValue = $('search').val();
 
     $.getScript('/products?search=' + searchValue);
-  
 
   });
+
   if ($('.pagination').length) {
     $(window).scroll(function() {
       var url = $('.pagination span.next').children().attr('href');
