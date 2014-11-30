@@ -1,0 +1,13 @@
+<% @product.reviews.each do |review| %>
+  <p class="comment">
+    <% if review.comment %>
+    <%= review.comment %>
+    <% end %>
+  </p>
+
+  <div class="poster">
+    <% if review.id != nil %>
+      <em>Posted by <%= review.user.name %> on <%= review.created_at %></em>    
+    <% end %> 
+  </div>
+<% end %>

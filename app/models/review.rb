@@ -4,6 +4,8 @@ class Review < ActiveRecord::Base
 
   before_save :strip_whitespace
 
+  validates :comment, :presence => true
+  
   private
   def strip_whitespace
     self.comment = self.comment.strip
