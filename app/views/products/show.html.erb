@@ -8,21 +8,19 @@
 
 <h3>Reviews</h3>
 <p>Reviews for <%= @product.name %></p>
-
-<% @product.reviews.each do |review| %>
-  <p>
-    <%= review.comment %>
-    <br>
-    <% if review.user != nil %>
-      <em> by <%= review.user.name %></em>
-      Added on: <%= review.created_at %>
+<div id="reviews">
+  <% @product.reviews.each do |review| %>
+    <% if review.comment %>
+    <!-- only print review if it is not the empty review object for 
+         the new review -->
+      <%= render review %>
     <% end %>
-  </p>
-<% end %>
+  <% end %>
+</div>
 
 <% if current_user %>
   <h4>New Review</h4>
-  <%= form_for([@product, @review]) do |f| %>
+  <%= form_for [@product, @review], :remote => true do |f| %>
     <% if @review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
